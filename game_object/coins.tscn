@@ -1,0 +1,98 @@
+[gd_scene load_steps=14 format=3 uid="uid://j01h7avdeny6"]
+
+[ext_resource type="Script" path="res://game_object/coins.gd" id="1_fvdmf"]
+[ext_resource type="Texture2D" uid="uid://3xsvrxv51k6d" path="res://resource/Objects/Items.png" id="1_tric6"]
+[ext_resource type="AudioStream" uid="uid://k4ilhofbarcy" path="res://resource/Audio/glass_004.ogg" id="3_fhkq3"]
+[ext_resource type="Texture2D" uid="uid://hcf4xvro21pt" path="res://resource/oarticles/star_08.png" id="4_ns5in"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w56gs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrv36"]
+atlas = ExtResource("1_tric6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54kb4"]
+atlas = ExtResource("1_tric6")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rxdp"]
+atlas = ExtResource("1_tric6")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ok08"]
+atlas = ExtResource("1_tric6")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svm0d"]
+atlas = ExtResource("1_tric6")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5ac6"]
+atlas = ExtResource("1_tric6")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0bgjy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrv36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54kb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rxdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ok08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svm0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5ac6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="Curve" id="Curve_naph3"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.235955, 6.59341), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Coins" type="Area2D"]
+script = ExtResource("1_fvdmf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w56gs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_0bgjy")
+autoplay = "default"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fhkq3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 100
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("4_ns5in")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 59.6
+initial_velocity_max = 281.82
+linear_accel_curve = SubResource("Curve_naph3")
+scale_amount_min = 0.01
+scale_amount_max = 0.03
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

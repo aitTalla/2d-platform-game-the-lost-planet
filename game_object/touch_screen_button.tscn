@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://bby5e65kyls0f"]
+
+[ext_resource type="Texture2D" uid="uid://bnikga8vwrci" path="res://resource/ui/keyboard_arrow_left_outline.png" id="1_w20ht"]
+[ext_resource type="Texture2D" uid="uid://b5ytco0amx60" path="res://resource/ui/keyboard_arrow_left.png" id="2_ovy0q"]
+[ext_resource type="Texture2D" uid="uid://cn5lywg5tekpw" path="res://resource/ui/keyboard_arrow_right_outline.png" id="3_yrbxc"]
+[ext_resource type="Texture2D" uid="uid://b21q6s08cafyu" path="res://resource/ui/keyboard_arrow_up.png" id="4_4y0ww"]
+[ext_resource type="Texture2D" uid="uid://dntmxxornpwr8" path="res://resource/ui/keyboard_arrow_right.png" id="4_fsbpg"]
+[ext_resource type="Texture2D" uid="uid://ciaioklft4kr8" path="res://resource/ui/keyboard_arrow_up_outline.png" id="5_xfgb7"]
+[ext_resource type="Texture2D" uid="uid://b0fc02xll64x0" path="res://resource/ui/steamdeck_button_a_outline.png" id="6_s8n7b"]
+[ext_resource type="Texture2D" uid="uid://l4p3bduov8si" path="res://resource/ui/steamdeck_button_a.png" id="7_4xv7o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lrm1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="TouchScreenButton" type="CanvasLayer"]
+
+[node name="Buttons Controles" type="Panel" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -140.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4lrm1")
+
+[node name="Movment Button" type="Panel" parent="Buttons Controles"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 95.0
+offset_right = 363.0
+offset_bottom = -1.0
+grow_vertical = 2
+
+[node name="leftButton" type="TouchScreenButton" parent="Buttons Controles/Movment Button"]
+position = Vector2(0, 3)
+texture_normal = ExtResource("1_w20ht")
+texture_pressed = ExtResource("2_ovy0q")
+action = "movLeft"
+
+[node name="rightButton" type="TouchScreenButton" parent="Buttons Controles/Movment Button"]
+position = Vector2(138, 3)
+texture_normal = ExtResource("3_yrbxc")
+texture_pressed = ExtResource("4_fsbpg")
+action = "movRight"
+
+[node name="Action Button" type="Panel" parent="Buttons Controles"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -218.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="jumpButton" type="TouchScreenButton" parent="Buttons Controles/Action Button"]
+position = Vector2(80, 3)
+texture_normal = ExtResource("5_xfgb7")
+texture_pressed = ExtResource("4_4y0ww")
+action = "jump"
+
+[node name="fireButton" type="TouchScreenButton" parent="Buttons Controles/Action Button"]
+position = Vector2(0, 54)
+scale = Vector2(0.578125, 0.578125)
+texture_normal = ExtResource("6_s8n7b")
+texture_pressed = ExtResource("7_4xv7o")
+action = "fire"
