@@ -1,0 +1,78 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="The Lost Planet"
+config/name_localized={
+"fr": "La Planet Perdue"
+}
+config/description="Plonge dans un voyage intergalactique palpitant avec notre jeu 2D dans l'espace ! Prends les commandes d'un vaisseau spatial ultramoderne alors que tu explores des systèmes solaires éloignés et affronte des défis cosmiques. Traverse des astéroïdes périlleux, évite des champs de débris mortels, et combat des ennemis extraterrestres dans des batailles spatiales épiques.
+
+Équipe ton vaisseau avec des armes futuristes et des boucliers défensifs pour affronter les dangers de l'univers. Découvre des planètes mystérieuses, recueille des ressources précieuses et débloque de nouvelles technologies pour améliorer tes capacités. Fais face à des boss redoutables et prouve que tu es le meilleur pilote de la galaxie.
+
+Avec des graphismes captivants et une bande-son immersive, plonge dans une aventure spatiale où chaque décision compte. Explore des environnements cosmiques époustouflants, remplis de secrets à découvrir et de défis à surmonter. Es-tu prêt à conquérir les étoiles et devenir une légende de l'espace ? Le destin de la galaxie repose entre tes mains !"
+config/version="1.0.0"
+run/main_scene="res://scenes/menu.tscn"
+config/features=PackedStringArray("4.2", "Mobile")
+run/max_fps=30
+boot_splash/bg_color=Color(0.969137, 0.969137, 0.969137, 1)
+boot_splash/image="res://iconsAitTalla.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="res://faviconColors.png"
+config/macos_native_icon="res://faviconColors.png"
+config/windows_native_icon="res://faviconColors.png"
+boot_splash/minimum_display_time=3000
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
+
+[input]
+
+movLeft={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":113,"echo":false,"script":null)
+]
+}
+movRight={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"echo":false,"script":null)
+]
+}
+jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"echo":false,"script":null)
+]
+}
+fire={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(92, 16),"global_position":Vector2(96, 57),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194326,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
