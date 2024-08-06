@@ -2,7 +2,7 @@
 
 Bienvenue dans **The Lost Planet 2D de Plateforme**, un jeu de plateforme captivant créé avec Godot 4. 
 Ce jeu propose un personnage jouable qui peut se déplacer et interagir avec différents niveaux via un menu de sélection.
-
+![img](cap.png)
 ## Description
 
 **The Lost Planet 2D de Plateforme** est un jeu de plateforme en 2D où vous incarnez un personnage pouvant se déplacer, sauter et interagir avec les niveaux. 
@@ -18,7 +18,7 @@ regarder [ici](https://craftpix.net/freebies/free-sci-fi-platformer-1-bit-pixel-
 - **Menu de Sélection des Niveaux :** Accédez facilement à différents niveaux grâce à un menu interactif.
 - **Niveaux Variés :** Explorez des niveaux conçus avec des défis et des obstacles uniques.
 - **Recuperation Des Pieces** :****
-
+![img](cap1.png)
 ## Installation
 
 1. **Clonez le dépôt :**
